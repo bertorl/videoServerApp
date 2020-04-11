@@ -1,0 +1,37 @@
+<header>
+  <mat-toolbar color="primary" role="heading">
+    <!--LOGO AND MENU-->
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlexFill>
+      <div fxLayoutGap="20px">
+        <button mat-icon-button (click)="onSidenavClick()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="icono">
+        </div>
+      </div>
+
+      <!--SEARCH-->
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="30%">
+        <mat-form-field [appearance]="appearance">
+          <input type="search" matInput (input)="onChangeSearch($event)" (search)="onChangeSearch($event)">
+          <button mat-button matSuffix mat-icon-button>
+            <mat-icon matSuffix>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div class="nav-group" fxFlex fxLayout fxLayoutAlign="end" fxLayoutGap="20px">
+          <button mat-button mat-icon-button [matMenuTriggerFor]="menu" (click)="onSettingsClick()">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Cuenta</button>
+            <button mat-menu-item [routerLink]="['/home/addcontent']">Añadir contenido</button>
+          </mat-menu>
+          <button mat-icon-button (click)="onNotificationClick()">
+            <mat-icon>notifications_active</mat-icon>
+          </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</header>

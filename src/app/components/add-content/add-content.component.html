@@ -1,0 +1,38 @@
+<div fxFill>
+  <div fxFlex class="homepage-content" fxLayout="row">
+    <mat-card fxFlex="300px" class="sidepanel-content">
+      <mat-card-header>
+        <h2>Añadir una película nueva</h2>
+      </mat-card-header>
+    </mat-card>
+    <div fxFlex class="main-content">
+      <mat-card fxFlex fxLayout="column">
+        <mat-card-header fxFlex="nogrow">
+          <h2>Añadir una película nueva</h2>
+        </mat-card-header>
+        <mat-card-content>
+          <form fxFlex [formGroup]="addForm">
+            <div fxLayoutGap="15px" fxLayout="column">
+              <mat-form-field fxFlex>
+                <input matInput placeholder="Título" formControlName="title">
+              </mat-form-field>
+              <app-actor-chip-input fxFlex [actorsList]="actorsList"></app-actor-chip-input>
+              <app-upload-file fxFlex #fileUploader [typeUpload]="typeUploadMovie"></app-upload-file>
+              <mat-form-field fxFlex>
+                <input matInput placeholder="Link de la película" formControlName="urlMovie">
+              </mat-form-field>
+          </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions fxFlex="nogrow">
+          <div class="modal-footer" fxLayoutGap="10px">
+            <button mat-raised-button color="primary" (click)="upload()" matTooltip="Guardar"
+              [disabled]="!canSave()">
+              <mat-icon>save</mat-icon>
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

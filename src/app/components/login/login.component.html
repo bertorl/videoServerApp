@@ -1,0 +1,13 @@
+<div fxFill fxFlexAlign="space-evenly center">
+  <div>
+    <form [formGroup]="loginForm" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="username" placeholder="User" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="password" placeholder="Password" type="password" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)=login()>Login</button>
+    </form>
+  </div>
+</div>

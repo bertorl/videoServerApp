@@ -1,0 +1,26 @@
+<div fxFill>
+  <mat-form-field class="chip-list">
+    <mat-chip-list #chipList aria-label="Selección de actores">
+      <mat-chip
+        *ngFor="let actor of selectedActors"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(actor)">
+        {{actor.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Nuevo actor..."
+        [formControl]="actorCtrl"
+        #actorInput
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let actor of filteredActors | async" [value]="actor">
+        {{actor.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

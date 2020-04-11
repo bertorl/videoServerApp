@@ -1,0 +1,27 @@
+<!--<div fxFill>
+  <div fxLayout="column" fxFlex>
+    <div fxFlex class="grid-content">
+      <div fxLayout="row" fxLayoutGap="30px">
+        <app-movie *ngFor="let movie of moviesArray;" [movie]="movie"></app-movie>
+      </div>
+    </div>
+    <div>
+        <mat-paginator [length]="100" [pageSize]="10" fxLayoutAlign="end"></mat-paginator>
+    </div>
+  </div>
+</div>-->
+
+<!-- fxFlex fxLayout="row" fxLayoutGap="30px" -->
+
+<div fxFill fxLayout="column">
+  <div fxFlex class="homepage-content">
+    <div fxFlex>
+      <div fxLayout="row" fxLayoutGap="30px grid">
+        <app-movie *ngFor="let movie of moviesArray;" [movie]="movie"></app-movie>
+      </div>
+    </div>
+  </div>
+  <div>
+    <mat-paginator [length]="100" [pageSize]="10" fxLayoutAlign="end"></mat-paginator>
+  </div>
+</div>

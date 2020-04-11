@@ -1,0 +1,12 @@
+.homepage-content {
+	max-width: 100%;
+	margin: 40px auto 20px;
+  padding: 0 40px;
+}
+
+.grid-content .main-grid-content {
+	align-items: stretch;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}

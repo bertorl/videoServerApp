@@ -1,0 +1,31 @@
+<div fxFill>
+  <!-- HEADER -->
+  <mat-sidenav-container fxFill>
+    <mat-sidenav #sidenav role="navigation">
+      <mat-nav-list>
+        <mat-list-item (click)="sidenav.close()" [routerLink]="['/home']">
+            <mat-icon mat-list-icon>home</mat-icon>
+            <span class="nav-caption" matLine>Home</span>
+        </mat-list-item>
+        <mat-list-item (click)="sidenav.close()" [routerLink]="['/home/movies']">
+            <mat-icon mat-list-icon>theaters</mat-icon>
+            <span class="nav-caption" matLine>Peliculas</span>
+        </mat-list-item>
+        <mat-list-item (click)="sidenav.close()" [routerLink]="['/home/series']">
+            <mat-icon mat-list-icon>account_balance</mat-icon>
+            <span class="nav-caption" matLine>Series (not impl)</span>
+        </mat-list-item>
+      </mat-nav-list>
+  </mat-sidenav>
+    <mat-sidenav-content fxLayout="column" fxFlex>
+      <app-header (sidenavEmitter)="sidenav.toggle()"></app-header>
+      <div fxFlex>
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+    <!-- SIDENAV -->
+  </mat-sidenav-container>
+
+
+</div>
